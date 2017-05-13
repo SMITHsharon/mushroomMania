@@ -8,8 +8,38 @@
 	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 </head>
 
-<body>
+<body ng-app="mushroomMania">
+
 	<h1>NSS Mushroom Mania</h1>
+
+
+	<div ng-controller="ItemCtrl">
+
+		<!-- Above the list, provide one text box, and two radio buttons. -->
+		<!-- The radio buttons should be labeled Poisonous and Non-poisonous. -->
+
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<h1>Selected Mushrooms</h1>
+			</div> <!-- .col -->
+		</div> <!-- .row -->
+
+
+		<div ng-show="showMushroomList">
+
+			<!-- <input type="text" name="" placeholder="Poisonous? or Non-poisonous? ..." ng-model="SearchText"> -->
+
+			<h3>some title here</h3>
+			<!-- <div ng-repeat="item in mushrooms | filter:{isCompleted:false" | filter: searchText"> -->
+			<div ng-repeat="item in mushrooms">
+				<!-- <div class="panel panel-default"> -->
+					<!-- <div class="panel-body"> -->
+					
+					<!-- </div>  .panel-body --> -->
+				<!--</div>  .panel -->
+			</div> <!-- ng-repeat ... -->
+		</div> <!-- ng-show=showMushroomList -->
+	</div> <!-- ng-controller -->
 
   
 	<!-- 3rd party scripts -->
@@ -19,8 +49,8 @@
 	<script type="text/javascript" src="./lib/bower_components/angular/angular.min.js"></script>
 
 	<!-- personal scripts -->
-	<!-- <script type="text/javascript" src="./javascripts/app.js"></script>
-  	<script type="text/javascript" src="./javascripts/AppConstants.js"></script> -->
+	<script type="text/javascript" src="./javascripts/app.js"></script>
+  	<script type="text/javascript" src="./javascripts/AppConstants.js"></script>
 	<script type="text/javascript" src="./javascripts/main.js"></script>
 
 </body>
