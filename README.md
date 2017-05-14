@@ -17,7 +17,7 @@ This exercise uses Angular to load JSON data from Firebase and filter the output
 ### Project Specs
 - Given: JSON data file
 - Imported the JSON data into Firebase as the seed file
-- Completed all the project setup: jQuery, Bootstrap, SASS, Angular, Sass
+- Completed all the project setup: jQuery, Bootstrap, SASS, Angular, Grunt
 - One controller is defined for the app, `ShroomCtrol`. 
 - The controller loads the JSON data from Firebase with an `XHR` call using the `$http` function that Angular provides.
 - The app puts the JSON object into `$scope.mushrooms` and binds that variable to the controller.
