@@ -37,7 +37,7 @@ This exercise uses Angular to load JSON data from firebase and filter the output
 
 ### How To View The Screen 
 ```
-git clone 
+git clone https://github.com/SMITHsharon/mushroomMania.git
 cd mushroomMania
 cd lib
 bower install
