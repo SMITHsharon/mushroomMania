@@ -3,7 +3,7 @@
 	<meta charset="UTF-8">
 	<title>NSS Mushroom Mania</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Pontano+Sans|Shadows+Into+Light" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="./styles/main.css">
@@ -11,13 +11,7 @@
 
 <body ng-app="mushroomMania">
 
-	<!-- <h1>NSS Mushroom Mania</h1> -->
-
-
-	<div ng-controller="ItemCtrl">
-
-		<!-- Above the list, provide one text box, and two radio buttons. -->
-		<!-- The radio buttons should be labeled Poisonous and Non-poisonous. -->
+	<div ng-controller="ShroomCtrl">
 
 		<div class="row">
 			<div class="col-xs-8 col-xs-offset-2">
@@ -25,70 +19,49 @@
 			</div> <!-- .col -->
 		</div> <!-- .row -->
 
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<input type="text" name="" placeholder="search Shrooms ..." ng-model="SearchText">
+			</div>
+			<div class="radio col-xs-8 col-xs-offset-2">
+				<label class="radio-inline">
+				<input type="radio" ng-model="poisonFilter" ng-click="showPoisonous()" value="false" name="shroomType">Poisonous</label>
 
-		<!-- <div ng-show="showMushroomList"> -->
+				<label class="radio-inline">
+				<input type="radio" ng-model="poisonFilter" ng-click="showNonPoisonous()" value="true" name="shroomType">Non-Poisonous</label>
 
+				<!-- <label class="radio-inline">
+				<input type="radio" ng-model="poisonFilter" ng-click="showNonPoisonous()" value="undefined" name="shroomType">Display All</label> -->
+			</div>
+		</div>			
+
+
+		<!-- <div ng-show="nonPoisonous">
 			<div class="row">
 				<div class="col-xs-8 col-xs-offset-2">
-					<input type="text" name="" placeholder="search Shrooms ..." ng-model="SearchText">
+					<h3>Non-Poisonous Shrooms</h3>
 				</div>
-				<div class="radio col-xs-8 col-xs-offset-2">
-					<label class="radio-inline">
-					<input type="radio" ng-model="shroomType" ng-click="showPoisonous()" value="Poisonous" name="shroomType">Poisonous</label>
+			</div>		 -->	
+			<div class="row">
+				<div ng-repeat="item in mushrooms | filter:{edible: poisonFilter} | filter: SearchText">
+					<div class="shroomOutput col-xs-8 col-xs-offset-2">
+						<div><h2>{{item.name}}</h2></div>
+						<!-- <div>{{item.edible}}</div> -->
+						<div class="desc">{{item.description}}</div>
+					</div> <!-- .col -->
+				</div> <!-- ng-repeat ... -->
+			</div> <!-- .row -->
+		<!-- n</div> g-show=nonPoisonous -->
 
-					<label class="radio-inline">
-					<input type="radio" ng-model="shroomType" ng-click="showNonPoisonous()" value="Non-Poisonous" name="shroomType">Non-Poisonous</label>
+		<!-- <div ng-show="!nonPoisonous"> -->
+			<!-- <div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					<h3>Poisonous Shrooms</h3>
 				</div>
-			</div>			
+			</div>		 -->	
+			
+		<!--</div>  ng-show=!nonPoisonous -->
 
-
-			<div ng-show="nonPoisonous">
-				<div class="row">
-					<div class="col-xs-8 col-xs-offset-2">
-						<h3>Non-Poisonous Shrooms</h3>
-					</div>
-				</div>			
-				<div class="row">
-					<div ng-repeat="item in mushrooms | filter:{edible:true} | filter: SearchText">	
-							<div class="panel panel-default">
-								<div class="panel-body">
-									<div class="col-xs-2">
-									</div>
-									<div class="col-xs-8">
-										<div><h2>{{item.name}}</h2></div>
-										<div>{{item.edible}}</div>
-										<div class="desc">{{item.description}}</div>
-									</div> <!-- .col -->
-								</div>  <!-- .panel-body -->
-							</div>  <!-- .panel -->
-					</div> <!-- ng-repeat ... -->
-				</div> <!-- .row -->
-			</div> <!-- ng-show=nonPoisonous -->
-
-			<div ng-show="!nonPoisonous">
-				<div class="row">
-					<div class="col-xs-8 col-xs-offset-2">
-						<h3>Poisonous Shrooms</h3>
-					</div>
-				</div>			
-				<div class="row">
-					<div ng-repeat="item in mushrooms | filter:{edible:false} | filter: SearchText">	
-							<div class="panel panel-default">
-								<div class="panel-body">
-									<div class="col-xs-2">
-									</div>
-									<div class="col-xs-8">
-										<div><h2>{{item.name}}</h2></div>
-										<div>{{item.edible}}</div>
-										<div>{{item.description}}</div>
-									</div> <!-- .col -->
-								</div>  <!-- .panel-body -->
-							</div>  <!-- .panel -->
-					</div> <!-- ng-repeat ... -->
-				</div> <!-- .row -->
-			</div> <!-- ng-show=!nonPoisonous -->
-
-		<!-- </div> ng-show=showMushroomList -->
 	</div> <!-- ng-controller -->
 
   

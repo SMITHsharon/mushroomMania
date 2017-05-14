@@ -3,39 +3,39 @@ app.run((FIREBASE_CONFIG) => {
 });
 
 
-app.controller("ItemCtrl", ($http, $q, $scope, FIREBASE_CONFIG) => {
+app.controller("ShroomCtrl", ($http, $q, $scope, FIREBASE_CONFIG) => {
 
-	// $scope.showMushroomList = true;
-	$scope.nonPoisonous = false;
-
-	$scope.shroomType = true;
-	$scope.items = [];
+	$scope.poisonFilter = undefined;
+	$scope.shrooms = [];
 
 
+	// click not firing?
 	let showPoisonous = () => {
 console.log("clicked Show Poisonous");
-		$scope.poisonous = true;
+		$scope.poisonFilter = true;
 	};
 
+
+	// click not firing?
 	let showNonPoisonous = () => {
 console.log("clicked Show nonPoisonous");
-		$scope.nonPoisonous = true;
+		$scope.poisonFilter = false;
 	};
 
 
-	let getMushroomList = () => {
+	let getFBMushroomList = () => {
 
-		let itemz = [];
+		let shroomz = [];
 
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/mushrooms.json`)
-			.then((fbItems) => {
-				let itemCollection = fbItems.data;
-				Object.keys(itemCollection).forEach((key) => {
-					itemCollection[key].id = key;
-					itemz.push(itemCollection[key]);
+			.then((fbShrooms) => {
+				let fbMushrooms = fbShrooms.data;
+				Object.keys(fbMushrooms).forEach((key) => {
+					fbMushrooms[key].id = key;
+					shroomz.push(fbMushrooms[key]);
 				});
-					resolve(itemz);
+					resolve(shroomz);
 			})
 			.catch((error) => {
 				reject(error);
@@ -45,10 +45,10 @@ console.log("clicked Show nonPoisonous");
 
 	let getMushrooms = () => {
 
-		getMushroomList().then((itemz) => {
-			$scope.mushrooms = itemz;
+		getFBMushroomList().then((fbMushrooms) => {
+			$scope.mushrooms = fbMushrooms;
 		}).catch((error) => {
-			console.log("get Error", error);
+			console.log("error in getMushrooms", error);
 		});
 	};
 
