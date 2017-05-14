@@ -43,11 +43,11 @@
 			</div>
 		</div>			
 		<div class="row">
-			<div ng-repeat="item in mushrooms | filter:{edible: poisonFilter} | filter: SearchText">
+			<div ng-repeat="shroom in mushrooms | filter:{edible: poisonFilter} | filter: SearchText">
 				<div class="shroomOutput col-xs-8 col-xs-offset-2">
-					<div><h2 class="shroomName">{{item.name}}</h2></div>
-					<!-- <div>{{item.edible}}</div> -->
-					<div class="shroomDesc">{{item.description}}</div>
+					<div><h2 class="shroomName">{{shroom.name}}</h2></div>
+					<!-- <div>{{shroom.edible}}</div> -->
+					<div class="shroomDesc">{{shroom.description}}</div>
 				</div> <!-- .col -->
 			</div> <!-- ng-repeat ... -->
 		</div> <!-- .row -->
