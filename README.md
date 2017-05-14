@@ -11,7 +11,7 @@ This exercise uses Angular to load JSON data from firebase and filter the output
 ![Mushroom Mania | Poisonous Mushrooms](https://raw.githubusercontent.com/SMITHsharon/mushroomMania/shrooms/screens/Mushroom%20Mania%20on%20Click%20Poisonous.png)
 
 #### Mushroom Mania, Filtering on Text Search
-![Mushroom Mania, Filter on Text Search]()
+![Mushroom Mania, Filter on Text Search](https://raw.githubusercontent.com/SMITHsharon/mushroomMania/shrooms/screens/Mushroom%20Mania%20on%20Text%20Search.png)
 
 
 ### Project Specs
