@@ -1,2 +1,17 @@
 body {
-  background-color: lightblue; }
+  background-size: cover;
+  background-image: url("/images/background.jpeg");
+  max-width: 100%;
+  opacity: 0.5;
+  font: 100% "Pontano Sans", sans-serif; }
+
+input {
+  font-size: 2em; }
+
+.radio {
+  font-size: 1.8em;
+  font-weight: 900; }
+
+.panel-body .desc {
+  font-size: 1.5em;
+  font-weight: 900; }

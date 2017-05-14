@@ -5,8 +5,22 @@ app.run((FIREBASE_CONFIG) => {
 
 app.controller("ItemCtrl", ($http, $q, $scope, FIREBASE_CONFIG) => {
 
-	$scope.showMushroomList = true;
+	// $scope.showMushroomList = true;
+	$scope.nonPoisonous = false;
+
+	$scope.shroomType = true;
 	$scope.items = [];
+
+
+	let showPoisonous = () => {
+console.log("clicked Show Poisonous");
+		$scope.poisonous = true;
+	};
+
+	let showNonPoisonous = () => {
+console.log("clicked Show nonPoisonous");
+		$scope.nonPoisonous = true;
+	};
 
 
 	let getMushroomList = () => {
@@ -17,13 +31,11 @@ app.controller("ItemCtrl", ($http, $q, $scope, FIREBASE_CONFIG) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/mushrooms.json`)
 			.then((fbItems) => {
 				let itemCollection = fbItems.data;
-console.log("fbItems.data :: ", fbItems.data);
 				Object.keys(itemCollection).forEach((key) => {
 					itemCollection[key].id = key;
 					itemz.push(itemCollection[key]);
 				});
 					resolve(itemz);
-console.log("itemz :: ", itemz);
 			})
 			.catch((error) => {
 				reject(error);
@@ -44,3 +56,4 @@ console.log("itemz :: ", itemz);
 
 
 });
+
