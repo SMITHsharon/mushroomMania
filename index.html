@@ -10,7 +10,7 @@
 
 <body ng-app="mushroomMania">
 
-	<h1>NSS Mushroom Mania</h1>
+	<!-- <h1>NSS Mushroom Mania</h1> -->
 
 
 	<div ng-controller="ItemCtrl">
@@ -27,19 +27,30 @@
 
 		<div ng-show="showMushroomList">
 
-			<!-- <input type="text" name="" placeholder="Poisonous? or Non-poisonous? ..." ng-model="SearchText"> -->
+			<input type="text" name="" placeholder="Mushroom Name ..." ng-model="SearchText">
 
-			<h3>Shrooms</h3>
-			<!-- <div ng-repeat="item in mushrooms | filter:{isCompleted:false" | filter: searchText"> -->
-			<div ng-repeat="item in mushrooms">
-				<!-- <div class="panel panel-default"> -->
-					<!-- <div class="panel-body"> -->
-						<div><h2>{{item.name}}</h2></div>
-						<div>{{item.edible}}</div>
-						<div>{{item.description}}</div>
-					<!-- </div>  .panel-body -->
-				<!--</div>  .panel -->
-			</div> <!-- ng-repeat ... -->
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					<h3>Shrooms</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div ng-repeat="item in mushrooms | filter:{edible:true} | filter: SearchText">
+				<!-- <div ng-repeat="item in mushrooms"> -->
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="col-xs-2">
+							</div>
+							<div class="col-xs-8">
+								<div><h2>{{item.name}}</h2></div>
+								<div>{{item.edible}}</div>
+								<div>{{item.description}}</div>
+							</div> <!-- .col -->
+						</div>  <!-- .panel-body -->
+					</div>  <!-- .panel -->
+				</div> <!-- ng-repeat ... -->
+			</div> <!-- .row -->
 		</div> <!-- ng-show=showMushroomList -->
 	</div> <!-- ng-controller -->
 
