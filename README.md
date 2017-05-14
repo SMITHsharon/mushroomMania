@@ -2,7 +2,7 @@
 
 ### Project Description 
 
-This exercise uses Angular to load JSON data from firebase and filter the output based on user input via a text search box or clicks on radio buttons 
+This exercise uses Angular to load JSON data from Firebase and filter the output based on user input via a text search box or clicks on radio buttons. 
 
 #### Mushroom Mania on Launch 
 ![Mushroom Mania on Launch](https://raw.githubusercontent.com/SMITHsharon/mushroomMania/shrooms/screens/Mushroom%20Mania%20on%20Launch.png)
@@ -15,11 +15,11 @@ This exercise uses Angular to load JSON data from firebase and filter the output
 
 
 ### Project Specs
-- Given: The JSON data file
+- Given: JSON data file
 - Imported the JSON data into Firebase as the seed file
 - Completed all the project setup: jQuery, Bootstrap, Sass, Angular, Sass
 - One controller is defined for the app, `ShroomCtrol`. 
-- The controller loads the JSON data from firebase with an `XHR` call using the `$http` function that Angular provides.
+- The controller loads the JSON data from Firebase with an `XHR` call using the `$http` function that Angular provides.
 - The app puts the JSON object into `$scope.mushrooms` and binds that variable to the controller.
 - Uses the Angular directives: `ng-click`, `ng-repeat`, and `filter`. 
 
