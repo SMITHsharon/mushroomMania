@@ -5,7 +5,7 @@
 This exercise uses Angular to load JSON data from firebase and filter the output based on user input via a text search box or clicks on radio buttons 
 
 #### Mushroom Mania on Launch 
-![Mushroom Mania on Launch]()
+![Mushroom Mania on Launch](https://raw.githubusercontent.com/SMITHsharon/mushroomMania/shrooms/screens/Mushroom%20Mania%20on%20Launch.png)
 
 #### Mushroom Mania on Selecting Poisonous Mushrooms
 ![Mushroom Mania | Poisonous Mushrooms]()
