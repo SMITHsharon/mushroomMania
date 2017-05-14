@@ -9,17 +9,21 @@ app.controller("ShroomCtrl", ($http, $q, $scope, FIREBASE_CONFIG) => {
 	$scope.shrooms = [];
 
 
-	// click not firing?
-	let showPoisonous = () => {
-console.log("clicked Show Poisonous");
-		$scope.poisonFilter = true;
+	$scope.showPoisonous = () => {
+		$scope.poisonFilter = false;
+		$scope.shroomHeader = "These Shrooms Are Poisonous | NOT Edible!";
 	};
 
 
-	// click not firing?
-	let showNonPoisonous = () => {
-console.log("clicked Show nonPoisonous");
-		$scope.poisonFilter = false;
+	$scope.showNonPoisonous = () => {
+		$scope.poisonFilter = true;
+		$scope.shroomHeader = "These Shrooms Are NOT Poisonous | They Are Edible!";
+	};
+
+
+	$scope.showAll = () => {
+		$scope.poisonFilter = undefined;
+		$scope.shroomHeader = "All Shrooms | Both Poisonous and Non-Poisonous";
 	};
 
 

@@ -12,6 +12,10 @@ input {
   font-size: 1.8em;
   font-weight: 900; }
 
-.shroomOutput .desc {
+.shroomOutput h2 {
+  margin-bottom: 0;
+  padding-bottom: 0; }
+
+.shroomOutput .ShroomDesc {
   font-size: 1.5em;
   font-weight: 900; }

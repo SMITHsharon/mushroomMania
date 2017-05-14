@@ -25,42 +25,33 @@
 			</div>
 			<div class="radio col-xs-8 col-xs-offset-2">
 				<label class="radio-inline">
-				<input type="radio" ng-model="poisonFilter" ng-click="showPoisonous()" value="false" name="shroomType">Poisonous</label>
+				<input type="radio" ng-model="poisonFilter" ng-click="showPoisonous()" name="shroomType">Poisonous</label>
 
 				<label class="radio-inline">
-				<input type="radio" ng-model="poisonFilter" ng-click="showNonPoisonous()" value="true" name="shroomType">Non-Poisonous</label>
+				<input type="radio" ng-model="poisonFilter" ng-click="showNonPoisonous()" name="shroomType">Non-Poisonous</label>
 
-				<!-- <label class="radio-inline">
-				<input type="radio" ng-model="poisonFilter" ng-click="showNonPoisonous()" value="undefined" name="shroomType">Display All</label> -->
+				<label class="radio-inline">
+				<input type="radio" ng-model="poisonFilter" ng-click="showAll()" value="undefined" name="shroomType">Display All</label>
 			</div>
 		</div>			
 
 
-		<!-- <div ng-show="nonPoisonous">
-			<div class="row">
-				<div class="col-xs-8 col-xs-offset-2">
-					<h3>Non-Poisonous Shrooms</h3>
-				</div>
-			</div>		 -->	
-			<div class="row">
-				<div ng-repeat="item in mushrooms | filter:{edible: poisonFilter} | filter: SearchText">
-					<div class="shroomOutput col-xs-8 col-xs-offset-2">
-						<div><h2>{{item.name}}</h2></div>
-						<!-- <div>{{item.edible}}</div> -->
-						<div class="desc">{{item.description}}</div>
-					</div> <!-- .col -->
-				</div> <!-- ng-repeat ... -->
-			</div> <!-- .row -->
-		<!-- n</div> g-show=nonPoisonous -->
-
-		<!-- <div ng-show="!nonPoisonous"> -->
-			<!-- <div class="row">
-				<div class="col-xs-8 col-xs-offset-2">
-					<h3>Poisonous Shrooms</h3>
-				</div>
-			</div>		 -->	
-			
-		<!--</div>  ng-show=!nonPoisonous -->
+		
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<h1>{{shroomHeader}}</h1>
+			</div>
+		</div>			
+		<div class="row">
+			<div ng-repeat="item in mushrooms | filter:{edible: poisonFilter} | filter: SearchText">
+				<div class="shroomOutput col-xs-8 col-xs-offset-2">
+					<div><h2 class="shroomName">{{item.name}}</h2></div>
+					<!-- <div>{{item.edible}}</div> -->
+					<div class="shroomDesc">{{item.description}}</div>
+				</div> <!-- .col -->
+			</div> <!-- ng-repeat ... -->
+		</div> <!-- .row -->
+		
 
 	</div> <!-- ng-controller -->
 

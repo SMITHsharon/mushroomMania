@@ -22,7 +22,12 @@ input {
 
 .shroomOutput {
 
-	.desc {
+		h2 {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.ShroomDesc {
 		font-size: 1.5em;
 		font-weight: 900;
 	}
