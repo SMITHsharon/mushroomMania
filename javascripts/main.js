@@ -5,7 +5,6 @@ app.run((FIREBASE_CONFIG) => {
 
 app.controller("ShroomCtrl", ($http, $q, $scope, FIREBASE_CONFIG) => {
 
-	$scope.poisonFilter = undefined;
 	$scope.mushrooms = [];
 
 
@@ -22,7 +21,7 @@ app.controller("ShroomCtrl", ($http, $q, $scope, FIREBASE_CONFIG) => {
 
 
 	$scope.showAll = () => {
-		$scope.poisonFilter = undefined;
+		$scope.poisonFilter = "";
 		$scope.shroomHeader = "All Shrooms | Both Poisonous and Non-Poisonous";
 	};
 

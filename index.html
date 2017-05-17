@@ -25,13 +25,13 @@
 			</div>
 			<div class="radio col-xs-8 col-xs-offset-2">
 				<label class="radio-inline">
-				<input type="radio" ng-model="poisonFilter" ng-click="showPoisonous()" name="shroomType">Poisonous</label>
+				<input type="radio" ng-click="showPoisonous()" name="shroomType">Poisonous</label>
 
 				<label class="radio-inline">
-				<input type="radio" ng-model="poisonFilter" ng-click="showNonPoisonous()" name="shroomType">Non-Poisonous</label>
+				<input type="radio" ng-click="showNonPoisonous()" name="shroomType">Non-Poisonous</label>
 
 				<label class="radio-inline">
-				<input type="radio" ng-model="poisonFilter" ng-click="showAll()" value="undefined" name="shroomType">Display All</label>
+				<input type="radio" ng-click="showAll()" ng-checked="true" name="shroomType">Display All</label>
 			</div>
 		</div>			
 
