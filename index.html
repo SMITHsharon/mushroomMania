@@ -3,13 +3,57 @@
 	<meta charset="UTF-8">
 	<title>NSS Mushroom Mania</title>
 
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 </head>
 
-<body>
-	<h1>NSS Mushroom Mania</h1>
+<body ng-app="mushroomMania">
+
+	<div ng-controller="ShroomCtrl">
+
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<h1>Mushroom Mania</h1>
+			</div> <!-- .col -->
+		</div> <!-- .row -->
+
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<input type="text" name="" placeholder="search Shrooms ..." ng-model="SearchText">
+			</div>
+			<div class="radio col-xs-8 col-xs-offset-2">
+				<label class="radio-inline">
+				<input type="radio" ng-click="showPoisonous()" name="shroomType">Poisonous</label>
+
+				<label class="radio-inline">
+				<input type="radio" ng-click="showNonPoisonous()" name="shroomType">Non-Poisonous</label>
+
+				<label class="radio-inline">
+				<input type="radio" ng-click="showAll()" ng-checked="true" name="shroomType">Display All</label>
+			</div>
+		</div>			
+
+
+		
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<h1>{{shroomHeader}}</h1>
+			</div>
+		</div>			
+		<div class="row">
+			<div ng-repeat="shroom in mushrooms | filter:{edible: poisonFilter} | filter: SearchText">
+				<div class="shroomOutput col-xs-8 col-xs-offset-2">
+					<div><h2 class="shroomName">{{shroom.name}}</h2></div>
+					<!-- <div>{{shroom.edible}}</div> -->
+					<div class="shroomDesc">{{shroom.description}}</div>
+				</div> <!-- .col -->
+			</div> <!-- ng-repeat ... -->
+		</div> <!-- .row -->
+		
+
+	</div> <!-- ng-controller -->
 
   
 	<!-- 3rd party scripts -->
@@ -19,8 +63,8 @@
 	<script type="text/javascript" src="./lib/bower_components/angular/angular.min.js"></script>
 
 	<!-- personal scripts -->
-	<!-- <script type="text/javascript" src="./javascripts/app.js"></script>
-  	<script type="text/javascript" src="./javascripts/AppConstants.js"></script> -->
+	<script type="text/javascript" src="./javascripts/app.js"></script>
+  	<script type="text/javascript" src="./javascripts/AppConstants.js"></script>
 	<script type="text/javascript" src="./javascripts/main.js"></script>
 
 </body>
