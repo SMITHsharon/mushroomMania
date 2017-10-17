@@ -29,7 +29,6 @@ This exercise uses Angular to load JSON data from Firebase and filter the output
 - `css`; `SASS`
 - `JavaScript`
 - `ES6`
-- `jQuery`
 - `Bootstrap`
 - `Angular`
 - `Grunt`
